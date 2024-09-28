@@ -24,7 +24,7 @@ const AppHeader = () => {
             </Link>
           </li>
           <li>
-            <Link to="/cart">
+            <Link to="/Cart">
               <img
                 src="https://www.nicepng.com/png/full/285-2851862_add-to-cart-png.png"
                 alt="cart1"

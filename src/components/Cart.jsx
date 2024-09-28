@@ -1,45 +1,31 @@
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const Cart = () => {
-    const [product, setProduct] = useState({});
-    const {productId} = useParams()
-    console.log(productId)
-      useEffect(() => {
-        const getProductDetail = async () => {
-          const response = await fetch(
-            `https://fakestoreapi.com/products/${productId}`
-          );
-          const data = await response.json();
-            setProduct(data);
-            console.log(data)
-        };
-        getProductDetail();
-      }, []);
-      const totalPrice = (
-        (acc, product) => acc + product.price * product.quantity,
-        0
+  const [product, setProduct] = useState({});
+  const { productId } = useParams();
+  console.log(productId);
+  useEffect(() => {
+    const getProductDetail = async () => {
+      const response = await fetch(
+        `https://fakestoreapi.com/products/${productId}`
       );
-    const finalPrice = totalPrice - totalPrice * 0.1;
-      const updateQuantity = (id, amount) => {
-        setCart(
-          Cart.map((product) =>
-            product.id === id
-              ? { ...product, quantity: product.quantity + amount }
-              : product
-          )
-        );
-      };
-
-      const removeFromCart = (id) => {
-        setCart(Cart.filter((product) => product.id !== id));
-      };
+      const data = await response.json();
+      setProduct(data);
+      console.log(data);
+    };
+    getProductDetail();
+  }, []);
 
   return (
     <div className="h-fit container mx-auto">
       <div className="flex flex-col md:flex-row">
         <div className="md=w-1/2">
-          <img src={product.image} alt={product.title} className="w-40 h-40 transition-" />
+          <img
+            src={product.image}
+            alt={product.title}
+            className="w-40 h-40 transition-"
+          />
         </div>
         <div className="md:w-1/2 p-4 gap-4">
           <h1 className="text-2xl font-bold">{product.title}</h1>
@@ -67,13 +53,10 @@ const Cart = () => {
           >
             -
           </button>
-          <div className="text-right font-mono">
-            <p>Total Price: ₹{totalPrice.toFixed(2)}</p>
-          </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default Cart
+export default Cart;
