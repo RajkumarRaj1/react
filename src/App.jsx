@@ -2,7 +2,7 @@ import React from "react";
 import AppHeader from "./components/AppHeader";
 import { Route, Routes } from "react-router-dom";
 import Product from "./components/Product";
-import Cart from "./components/cart";
+import Cart from "./components/cart/productId";
 
 const App = () => {
   return (
