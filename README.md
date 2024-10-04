@@ -1,8 +1,21 @@
-# React + Vite
+# Shopping Cart Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+A simple e-commerce application built with React, using the Fake Store API to fetch products. It includes product listing and cart functionality.
 
-Currently, two official plugins are available:
+## Features
+- Displays a list of products fetched from the Fake Store API.
+- Users can add products to their cart and view their cart items.
+- Total price calculation with a 10% discount applied.
+- Responsive design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Setup
+1. Clone the repository or download the source code.
+2. Navigate to the project directory.
+3. Run npm install to install dependencies.
+4. Run npm start to launch the application.
+
+## How to Play
+- Navigate to the home page to view products.
+- Click "Add to Cart" to add items to your cart.
+- Navigate to the cart page to view and manage your selected items.
